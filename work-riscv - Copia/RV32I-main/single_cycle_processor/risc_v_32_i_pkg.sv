@@ -35,6 +35,9 @@ typedef enum logic [ALU_SEL_LEN-1:0] {
     OP_SLL,
     OP_SRL,
     OP_SRA,
+    OP_MAX,      // <--- Adicionado: max(rs1, rs2)
+    OP_SIGN,     // <--- Adicionado: sinal de rs1
+    OP_MAC,      // <--- Adicionado: rd + (rs1 * rs2)
     OP_UNKNOWN
 } alu_select_e;
 
