@@ -14,20 +14,23 @@ module RegisterFile #(parameter XLEN = 32, parameter REG_ADDR_WIDTH = 5)
 (
     output logic [XLEN-1:0]             read_data_1_o,
     output logic [XLEN-1:0]             read_data_2_o,
+    output logic [XLEN-1:0]             read_data_3_o, //  Aqui está a porta 3 para o mac
     input  logic                        clk_i,
     input  logic                        write_enable_i,
     input  logic [XLEN-1:0]             write_data_i,
     input  logic [REG_ADDR_WIDTH-1:0]   write_address_i,
     input  logic [REG_ADDR_WIDTH-1:0]   read_address_1_i,
-    input  logic [REG_ADDR_WIDTH-1:0]   read_address_2_i
+    input  logic [REG_ADDR_WIDTH-1:0]   read_address_2_i,
+    input  logic [REG_ADDR_WIDTH-1:0]   read_address_3_i  // Adicionado aqui ó
 );
 
-    logic [XLEN-1:0]register [XLEN-1:0];
+    logic [XLEN-1:0] register [XLEN-1:0];
 
     always_comb
     begin
-        assign read_data_1_o = (read_address_1_i == 0) ? 0 : register[read_address_1_i];
-        assign read_data_2_o = (read_address_2_i == 0) ? 0 : register[read_address_2_i];
+        read_data_1_o = (read_address_1_i == 0) ? 0 : register[read_address_1_i];
+        read_data_2_o = (read_address_2_i == 0) ? 0 : register[read_address_2_i];
+        read_data_3_o = (read_address_3_i == 0) ? 0 : register[read_address_3_i]; // <--- Adicionado p/ a terceira porta
     end
 
     always_ff @(negedge clk_i)

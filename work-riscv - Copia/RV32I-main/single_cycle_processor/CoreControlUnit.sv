@@ -39,6 +39,7 @@ module CoreControlUnit #(parameter XLEN = 32)
     localparam OP_U_LUI_TYPE    = 7'b0110111;
     localparam OP_U_AUIPC_TYPE  = 7'b0010111;
     localparam OP_J_TYPE        = 7'b1101111;
+    localparam OP_MAC_TYPE      = 7'b0001011; // Adicionado o op code do mac
 
     always_comb
     begin
@@ -118,6 +119,20 @@ module CoreControlUnit #(parameter XLEN = 32)
                     4'b0111:
                             begin
                             alu_op_sel_o = OP_AND;
+                            comp_op_sel_o = OP_BUNKNOWN;
+                            execute_port_b_sel_o = 1'b1;
+                            reg_write_data_sel_o = RD_MUX_ALU;
+                            end
+                    4'b1110: // max rd, rs1, rs2
+                            begin
+                            alu_op_sel_o = OP_MAX;
+                            comp_op_sel_o = OP_BUNKNOWN;
+                            execute_port_b_sel_o = 1'b1;
+                            reg_write_data_sel_o = RD_MUX_ALU;
+                            end
+                    4'b1111: // sign rd, rs1
+                            begin
+                            alu_op_sel_o = OP_SIGN;
                             comp_op_sel_o = OP_BUNKNOWN;
                             execute_port_b_sel_o = 1'b1;
                             reg_write_data_sel_o = RD_MUX_ALU;
@@ -351,6 +366,19 @@ module CoreControlUnit #(parameter XLEN = 32)
                 load_store_type_o = LS_N_A;
                 data_memory_write_enable_o = 1'b0;
                 reg_write_data_sel_o = RD_MUX_PC_N;
+            end
+            OP_MAC_TYPE:
+            begin
+                pc_mux_sel_o = 1'b0;
+                reg_write_enable_o = 1'b1;
+                imm_select_o = IMM_UNKNOWN_TYPE;
+                execute_port_a_sel_o = 1'b1;
+                execute_port_b_sel_o = 1'b1;
+                alu_op_sel_o = OP_MAC;
+                comp_op_sel_o = OP_BUNKNOWN;
+                reg_write_data_sel_o = RD_MUX_ALU;
+                load_store_type_o = LS_N_A;
+                data_memory_write_enable_o = 1'b0;
             end
             default:
             begin
