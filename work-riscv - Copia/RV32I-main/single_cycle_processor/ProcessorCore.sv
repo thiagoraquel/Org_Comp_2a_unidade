@@ -13,17 +13,17 @@ import risc_v_32_i_pkg::*;
 
 module ProcessorCore
 (
-    input logic             clk_i,
-    input logic             reset_i,
+    input logic              clk_i,
+    input logic              reset_i,
 
-    output logic [31:0]     instruction_address_o,
-     input logic [31:0]     instruction_data_i,
+    output logic [31:0]      instruction_address_o,
+     input logic [31:0]      instruction_data_i,
 
-     input logic [31:0]     read_data_i,
-    output logic            write_enable_o,
-    output logic [31:0]     write_data_o,
-    output logic [3:0]      write_data_strobe_o,
-    output logic [31:0]     address_o,
+     input logic [31:0]      read_data_i,
+    output logic             write_enable_o,
+    output logic [31:0]      write_data_o,
+    output logic [3:0]       write_data_strobe_o,
+    output logic [31:0]      address_o,
 
     // Interface de "retire" para o testbench (top.sv) observar, ciclo a
     // ciclo, qual instrucao terminou de executar. Como esse core e
@@ -44,6 +44,7 @@ module ProcessorCore
     logic [31:0]immediate;
     logic [31:0]reg_source_1;
     logic [31:0]reg_source_2;
+    logic [31:0]reg_source_3; // Adicionado para a 3ª porta de leitura (MAC)
 
     logic [31:0]alu_port_a;
     logic [31:0]alu_port_b;
@@ -93,12 +94,14 @@ module ProcessorCore
     (
         .read_data_1_o      (reg_source_1),
         .read_data_2_o      (reg_source_2),
+        .read_data_3_o      (reg_source_3),        // Adicionado aqui
         .clk_i              (clk_i),
         .write_enable_i     (reg_write_enable),
         .write_data_i       (reg_data),
         .write_address_i    (instruction[11:7]),
         .read_address_1_i   (instruction[19:15]),
-        .read_address_2_i   (instruction[24:20])
+        .read_address_2_i   (instruction[24:20]),
+        .read_address_3_i   (instruction[11:7])   // (rd lido como 3º operando)
     );
 
     ImmediateSignExtend #(.XLEN(XLEN)) ise
@@ -136,6 +139,7 @@ module ProcessorCore
         .alu_o          (alu_output),
         .alu_port_a_i   (alu_port_a),
         .alu_port_b_i   (alu_port_b),
+        .alu_port_c_i   (reg_source_3),  // <--- Adicionado
         .alu_op_sel_i   (alu_op_sel)
     );
 
