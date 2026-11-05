@@ -11,7 +11,7 @@ Z0 dC:/Users/thiag/Downloads/new_exercicios_programming/Org_Comp_2a_unid/work-ri
 vArithmeticLogicUnit
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 Z2 DXx4 work 15 risc_v_32_i_pkg 0 22 VacEA2H?Ai8Xg4Ro64=EP0
-DXx4 work 27 ArithmeticLogicUnit_sv_unit 0 22 CB`gB@Ce:Hc@DDT8a]jJF1
+DXx4 work 27 ArithmeticLogicUnit_sv_unit 0 22 bOiD:koK5IUfjXDbVHWXH3
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
@@ -27,22 +27,22 @@ Z5 8ArithmeticLogicUnit.sv
 Z6 FArithmeticLogicUnit.sv
 Z7 L0 15
 Z8 OV;L;10.5b;63
-Z9 !s108 1790712130.000000
-Z10 !s107 ../tb/top.sv|risc_v_32_i_pkg.sv|RegisterFile.sv|ProcessorCore.sv|LoadStoreUnit.sv|InstructionMemory.sv|ImmediateSignExtend.sv|DataMemory.sv|CoreControlUnit.sv|ComparatorUnit.sv|ArithmeticLogicUnit.sv|
-Z11 !s90 -reportprogress|300|ArithmeticLogicUnit.sv|ComparatorUnit.sv|CoreControlUnit.sv|DataMemory.sv|ImmediateSignExtend.sv|InstructionMemory.sv|LoadStoreUnit.sv|ProcessorCore.sv|RegisterFile.sv|risc_v_32_i_pkg.sv|../tb/top.sv|
+Z9 !s108 1793740806.000000
+Z10 !s107 ../tb/top.sv|ProcessorCore.sv|LoadStoreUnit.sv|ComparatorUnit.sv|ImmediateSignExtend.sv|CoreControlUnit.sv|ArithmeticLogicUnit.sv|RegisterFile.sv|risc_v_32_i_pkg.sv|
+Z11 !s90 -reportprogress|300|risc_v_32_i_pkg.sv|RegisterFile.sv|ArithmeticLogicUnit.sv|CoreControlUnit.sv|ImmediateSignExtend.sv|ComparatorUnit.sv|LoadStoreUnit.sv|ProcessorCore.sv|../tb/top.sv|
 !i113 1
 Z12 tCvgOpt 0
 n@arithmetic@logic@unit
 XArithmeticLogicUnit_sv_unit
 R1
 R2
-VCB`gB@Ce:Hc@DDT8a]jJF1
+VbOiD:koK5IUfjXDbVHWXH3
 r1
 !s85 0
 31
 !i10b 1
-!s100 i9II0ldlUBUBD@F[41k;i2
-ICB`gB@Ce:Hc@DDT8a]jJF1
+!s100 9Q=hMOC=2a_Kzz:PH0n5W3
+IbOiD:koK5IUfjXDbVHWXH3
 !i103 1
 S1
 R0
@@ -173,16 +173,16 @@ R8
 r1
 !s85 0
 31
-R9
-R10
-R11
+Z24 !s108 1790712130.000000
+Z25 !s107 ../tb/top.sv|risc_v_32_i_pkg.sv|RegisterFile.sv|ProcessorCore.sv|LoadStoreUnit.sv|InstructionMemory.sv|ImmediateSignExtend.sv|DataMemory.sv|CoreControlUnit.sv|ComparatorUnit.sv|ArithmeticLogicUnit.sv|
+Z26 !s90 -reportprogress|300|ArithmeticLogicUnit.sv|ComparatorUnit.sv|CoreControlUnit.sv|DataMemory.sv|ImmediateSignExtend.sv|InstructionMemory.sv|LoadStoreUnit.sv|ProcessorCore.sv|RegisterFile.sv|risc_v_32_i_pkg.sv|../tb/top.sv|
 !i113 1
 R12
 n@data@memory
 vImmediateSignExtend
 R1
 R2
-DXx4 work 27 ImmediateSignExtend_sv_unit 0 22 V[f1jW7VJF>8Y0XHAHCV20
+DXx4 work 27 ImmediateSignExtend_sv_unit 0 22 f<8>G;oOIbdB0oGHBlL5A0
 R3
 r1
 !s85 0
@@ -194,8 +194,8 @@ IPjnW;A@;Wm3WSRbWVJAl80
 S1
 R0
 R14
-Z24 8ImmediateSignExtend.sv
-Z25 FImmediateSignExtend.sv
+Z27 8ImmediateSignExtend.sv
+Z28 FImmediateSignExtend.sv
 R17
 R8
 R9
@@ -207,19 +207,19 @@ n@immediate@sign@extend
 XImmediateSignExtend_sv_unit
 R1
 R2
-VV[f1jW7VJF>8Y0XHAHCV20
+Vf<8>G;oOIbdB0oGHBlL5A0
 r1
 !s85 0
 31
 !i10b 1
-!s100 EBjX<<X];E>ARN_fLPC0b1
-IV[f1jW7VJF>8Y0XHAHCV20
+!s100 D47^OI[J=moJmV2MCJ1K`2
+If<8>G;oOIbdB0oGHBlL5A0
 !i103 1
 S1
 R0
 R14
-R24
-R25
+R27
+R28
 R23
 R8
 R9
@@ -246,16 +246,16 @@ R8
 r1
 !s85 0
 31
-R9
-R10
-R11
+R24
+R25
+R26
 !i113 1
 R12
 n@instruction@memory
 vLoadAndStoreUnit
 R1
 R2
-DXx4 work 21 LoadStoreUnit_sv_unit 0 22 F@Hk[_f67eVcof_W^f^9P2
+DXx4 work 21 LoadStoreUnit_sv_unit 0 22 2o7=WFf3?977NK?D[M4eD1
 R3
 r1
 !s85 0
@@ -267,8 +267,8 @@ I814WMb1fLoXFi8z0NTKa[1
 S1
 R0
 R14
-Z26 8LoadStoreUnit.sv
-Z27 FLoadStoreUnit.sv
+Z29 8LoadStoreUnit.sv
+Z30 FLoadStoreUnit.sv
 R17
 R8
 R9
@@ -280,19 +280,19 @@ n@load@and@store@unit
 XLoadStoreUnit_sv_unit
 R1
 R2
-VF@Hk[_f67eVcof_W^f^9P2
+V2o7=WFf3?977NK?D[M4eD1
 r1
 !s85 0
 31
 !i10b 1
-!s100 k;zC3@37zcWaGo54fiOT10
-IF@Hk[_f67eVcof_W^f^9P2
+!s100 hSB0i^zC7g?h0lH`L4aS<2
+I2o7=WFf3?977NK?D[M4eD1
 !i103 1
 S1
 R0
 R14
-R26
-R27
+R29
+R30
 R23
 R8
 R9
@@ -315,9 +315,9 @@ IbK9468`Yln2YgHMU^mjz61
 !s105 ProcessorCore_sv_unit
 S1
 R0
-Z28 w1790077527
-Z29 8ProcessorCore.sv
-Z30 FProcessorCore.sv
+Z31 w1790077527
+Z32 8ProcessorCore.sv
+Z33 FProcessorCore.sv
 R17
 R8
 R9
@@ -339,9 +339,9 @@ IfgMTWB54bLY8l@I5VcDjU2
 !i103 1
 S1
 R0
-R28
-R29
-R30
+R31
+R32
+R33
 R23
 R8
 R9
@@ -352,7 +352,7 @@ R12
 n@processor@core_sv_unit
 vRegisterFile
 R1
-R22
+Z34 !s110 1793740806
 !i10b 1
 !s100 c0N]F>BjRFMQ84H>@^zMI0
 IjcEeRd0_J][]ZogXHUOEQ3
@@ -376,7 +376,7 @@ R12
 n@register@file
 Xrisc_v_32_i_pkg
 R1
-R22
+R34
 !i10b 1
 !s100 aS?afF<R?_3X3ERCU:jUI3
 IVacEA2H?Ai8Xg4Ro64=EP0
@@ -399,7 +399,7 @@ R12
 vtop
 R1
 R2
-DXx4 work 11 top_sv_unit 0 22 H`EAg[4lbm]_A4YIKI9b23
+DXx4 work 11 top_sv_unit 0 22 i=8ibnel8nBP80GjMaAGl1
 R3
 r1
 !s85 0
@@ -410,9 +410,9 @@ Izi<@]bI5aFjIK4?ja24Cl3
 !s105 top_sv_unit
 S1
 R0
-Z31 w1789225733
-Z32 8../tb/top.sv
-Z33 F../tb/top.sv
+Z35 w1789225733
+Z36 8../tb/top.sv
+Z37 F../tb/top.sv
 R7
 R8
 R9
@@ -423,19 +423,19 @@ R12
 Xtop_sv_unit
 R1
 R2
-VH`EAg[4lbm]_A4YIKI9b23
+Vi=8ibnel8nBP80GjMaAGl1
 r1
 !s85 0
 31
 !i10b 1
-!s100 FKalfC0KhQIUn=I:5hCAe0
-IH`EAg[4lbm]_A4YIKI9b23
+!s100 KobL9;8O=XC5?dM0^DF<=2
+Ii=8ibnel8nBP80GjMaAGl1
 !i103 1
 S1
 R0
-R31
-R32
-R33
+R35
+R36
+R37
 R13
 R8
 R9
