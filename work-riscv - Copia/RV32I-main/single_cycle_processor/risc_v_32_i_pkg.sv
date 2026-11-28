@@ -1,12 +1,12 @@
 /***************************************************************************
-* Copyright (c) 2022 Hariesh Anbalagan
-* SPDX-License-Identifier: GPL-3.0-only
-* 
-* Package: risc_v_32_i_pkg.sv
+- Copyright (c) 2022 Hariesh Anbalagan
+- SPDX-License-Identifier: GPL-3.0-only
+- 
+- Package: risc_v_32_i_pkg.sv
 *
-* Description:
+- Description:
 *
-* Contains the parameters and enums required.
+- Contains the parameters and enums required.
 ***************************************************************************/
 package risc_v_32_i_pkg;
 
@@ -61,8 +61,9 @@ typedef enum logic [RD_MUX_SEL_LEN-1:0] {
     RD_MUX_BCU,
     RD_MUX_IMM,
     RD_MUX_PC_N,
+    RD_MUX_ACC,  // <--- Adicionado: saida do miniacelerador neural (acc_exec)
     RD_MUX_N_A
-}write_data_select_e;
+} write_data_select_e;
 
 parameter LOAD_STORE_TYPE_LEN = 4;
 
@@ -77,6 +78,6 @@ typedef enum logic [LOAD_STORE_TYPE_LEN-1:0]
     S_H,
     S_B,
     LS_N_A
-}load_store_type_e;
+} load_store_type_e;
 
 endpackage

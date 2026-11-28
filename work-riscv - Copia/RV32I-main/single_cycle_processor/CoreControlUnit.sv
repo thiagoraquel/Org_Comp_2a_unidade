@@ -1,12 +1,12 @@
 /***************************************************************************
-* Copyright (c) 2022 Hariesh Anbalagan
-* SPDX-License-Identifier: GPL-3.0-only
-* 
-* Module: CoreControlUnit.sv
+- Copyright (c) 2022 Hariesh Anbalagan
+- SPDX-License-Identifier: GPL-3.0-only
+- 
+- Module: CoreControlUnit.sv
 *
-* Description:
+- Description:
 *
-* This does control of the processor core datapath
+- This does control of the processor core datapath
 ***************************************************************************/
 import risc_v_32_i_pkg::*;
 
@@ -22,6 +22,7 @@ module CoreControlUnit #(parameter XLEN = 32)
     output load_store_type_e        load_store_type_o,
     output logic                    data_memory_write_enable_o,
     output write_data_select_e      reg_write_data_sel_o,
+    output logic                    acc_load_o,
     input logic [6:0]               op_code_i,
     input logic [2:0]               funct3_i,
     input logic                     funct7_bit5_i,
@@ -40,9 +41,15 @@ module CoreControlUnit #(parameter XLEN = 32)
     localparam OP_U_AUIPC_TYPE  = 7'b0010111;
     localparam OP_J_TYPE        = 7'b1101111;
     localparam OP_MAC_TYPE      = 7'b0001011; // Adicionado o op code do mac
+    localparam OP_ACC_TYPE      = 7'b0101011; // Adicionado: acc_load e acc_exec
+
+    localparam FUNCT3_ACC_LOAD  = 3'b000;
+    localparam FUNCT3_ACC_EXEC  = 3'b001;
 
     always_comb
     begin
+        // Valor padrao seguro para evitar inferencia de latch
+        acc_load_o = 1'b0;
 
         unique case(op_code_i)
             OP_R_TYPE:
@@ -379,6 +386,38 @@ module CoreControlUnit #(parameter XLEN = 32)
                 reg_write_data_sel_o = RD_MUX_ALU;
                 load_store_type_o = LS_N_A;
                 data_memory_write_enable_o = 1'b0;
+            end
+            OP_ACC_TYPE:
+            begin
+                pc_mux_sel_o = 1'b0;
+                imm_select_o = IMM_UNKNOWN_TYPE;
+                execute_port_a_sel_o = 1'b1;
+                execute_port_b_sel_o = 1'b1;
+                alu_op_sel_o = OP_UNKNOWN;
+                comp_op_sel_o = OP_BUNKNOWN;
+                load_store_type_o = LS_N_A;
+                data_memory_write_enable_o = 1'b0;
+
+                unique case(funct3_i)
+                    FUNCT3_ACC_LOAD:
+                    begin
+                        reg_write_enable_o = 1'b0;
+                        reg_write_data_sel_o = RD_MUX_N_A;
+                        acc_load_o = 1'b1;
+                    end
+                    FUNCT3_ACC_EXEC:
+                    begin
+                        reg_write_enable_o = 1'b1;
+                        reg_write_data_sel_o = RD_MUX_ACC;
+                        acc_load_o = 1'b0;
+                    end
+                    default:
+                    begin
+                        reg_write_enable_o = 1'b0;
+                        reg_write_data_sel_o = RD_MUX_N_A;
+                        acc_load_o = 1'b0;
+                    end
+                endcase
             end
             default:
             begin

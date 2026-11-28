@@ -10,8 +10,8 @@ cModel Technology
 Z0 dC:/Users/thiag/Downloads/new_exercicios_programming/Org_Comp_2a_unid/work-riscv - Copia/RV32I-main/single_cycle_processor
 vArithmeticLogicUnit
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 DXx4 work 15 risc_v_32_i_pkg 0 22 VacEA2H?Ai8Xg4Ro64=EP0
-DXx4 work 27 ArithmeticLogicUnit_sv_unit 0 22 CB`gB@Ce:Hc@DDT8a]jJF1
+Z2 DXx4 work 15 risc_v_32_i_pkg 0 22 7AOUVe?0HEAPeAm4R>;i=3
+DXx4 work 27 ArithmeticLogicUnit_sv_unit 0 22 F<@LZEA_i`ZzeAea[1I[i1
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
@@ -22,27 +22,27 @@ IE:7I;I<dikR24GN?GcJj[2
 !s105 ArithmeticLogicUnit_sv_unit
 S1
 R0
-Z4 w1790020100
+Z4 w1793749869
 Z5 8ArithmeticLogicUnit.sv
 Z6 FArithmeticLogicUnit.sv
 Z7 L0 15
 Z8 OV;L;10.5b;63
-Z9 !s108 1790712130.000000
-Z10 !s107 ../tb/top.sv|risc_v_32_i_pkg.sv|RegisterFile.sv|ProcessorCore.sv|LoadStoreUnit.sv|InstructionMemory.sv|ImmediateSignExtend.sv|DataMemory.sv|CoreControlUnit.sv|ComparatorUnit.sv|ArithmeticLogicUnit.sv|
-Z11 !s90 -reportprogress|300|ArithmeticLogicUnit.sv|ComparatorUnit.sv|CoreControlUnit.sv|DataMemory.sv|ImmediateSignExtend.sv|InstructionMemory.sv|LoadStoreUnit.sv|ProcessorCore.sv|RegisterFile.sv|risc_v_32_i_pkg.sv|../tb/top.sv|
+Z9 !s108 1795737489.000000
+Z10 !s107 top.sv|DataMemory.sv|InstructionMemory.sv|ProcessorCore.sv|LoadStoreUnit.sv|ComparatorUnit.sv|ArithmeticLogicUnit.sv|CoreControlUnit.sv|ImmediateSignExtend.sv|RegisterFile.sv|neural_accelerator_unit.sv|../etapa1_3a_unid/neural_accelerator.sv|risc_v_32_i_pkg.sv|
+Z11 !s90 -reportprogress|300|risc_v_32_i_pkg.sv|../etapa1_3a_unid/neural_accelerator.sv|neural_accelerator_unit.sv|RegisterFile.sv|ImmediateSignExtend.sv|CoreControlUnit.sv|ArithmeticLogicUnit.sv|ComparatorUnit.sv|LoadStoreUnit.sv|ProcessorCore.sv|InstructionMemory.sv|DataMemory.sv|top.sv|
 !i113 1
 Z12 tCvgOpt 0
 n@arithmetic@logic@unit
 XArithmeticLogicUnit_sv_unit
 R1
 R2
-VCB`gB@Ce:Hc@DDT8a]jJF1
+VF<@LZEA_i`ZzeAea[1I[i1
 r1
 !s85 0
 31
 !i10b 1
-!s100 i9II0ldlUBUBD@F[41k;i2
-ICB`gB@Ce:Hc@DDT8a]jJF1
+!s100 KYV5f4QC]fi4GELH36DNP0
+IF<@LZEA_i`ZzeAea[1I[i1
 !i103 1
 S1
 R0
@@ -60,7 +60,7 @@ n@arithmetic@logic@unit_sv_unit
 vComparatorUnit
 R1
 R2
-DXx4 work 22 ComparatorUnit_sv_unit 0 22 >@baVJTX^5161>cZZ0GM@0
+DXx4 work 22 ComparatorUnit_sv_unit 0 22 B[^j1P]U5l_^ZbPR4Yn`z2
 R3
 r1
 !s85 0
@@ -85,13 +85,13 @@ n@comparator@unit
 XComparatorUnit_sv_unit
 R1
 R2
-V>@baVJTX^5161>cZZ0GM@0
+VB[^j1P]U5l_^ZbPR4Yn`z2
 r1
 !s85 0
 31
 !i10b 1
 !s100 OPJbKLea_bnCGUO@=8`^=3
-I>@baVJTX^5161>cZZ0GM@0
+IB[^j1P]U5l_^ZbPR4Yn`z2
 !i103 1
 S1
 R0
@@ -109,18 +109,18 @@ n@comparator@unit_sv_unit
 vCoreControlUnit
 R1
 R2
-DXx4 work 23 CoreControlUnit_sv_unit 0 22 <9nRzW@HY[KDhG9=90ngH2
+DXx4 work 23 CoreControlUnit_sv_unit 0 22 1F8hoGF0G77R?=RW;0<]=0
 R3
 r1
 !s85 0
 31
 !i10b 1
-!s100 FmSDeS`zenTM_^;Rf[m0B2
-IXgn>^]f[OhnmMXfFYS=040
+!s100 gLGOe6]G^Q5CBOHLC2hez0
+IfRh2jDEZ4kKil2F:h`iPD1
 !s105 CoreControlUnit_sv_unit
 S1
 R0
-Z18 w1790021226
+Z18 w1795733441
 Z19 8CoreControlUnit.sv
 Z20 FCoreControlUnit.sv
 R13
@@ -134,13 +134,13 @@ n@core@control@unit
 XCoreControlUnit_sv_unit
 R1
 R2
-V<9nRzW@HY[KDhG9=90ngH2
+V1F8hoGF0G77R?=RW;0<]=0
 r1
 !s85 0
 31
 !i10b 1
-!s100 fEK<hA:a^MzgT6::2C`j;3
-I<9nRzW@HY[KDhG9=90ngH2
+!s100 6UV]Kf>AP^I`lmMIenEVZ3
+I1F8hoGF0G77R?=RW;0<]=0
 !i103 1
 S1
 R0
@@ -157,7 +157,7 @@ R12
 n@core@control@unit_sv_unit
 vDataMemory
 R1
-Z22 !s110 1790712130
+Z22 !s110 1795737489
 !i10b 1
 !s100 KR5XU@=P1f[mmYg:AU12G1
 I9GF]XO2[2IgJ73aXY[]S52
@@ -182,7 +182,7 @@ n@data@memory
 vImmediateSignExtend
 R1
 R2
-DXx4 work 27 ImmediateSignExtend_sv_unit 0 22 V[f1jW7VJF>8Y0XHAHCV20
+DXx4 work 27 ImmediateSignExtend_sv_unit 0 22 n@]fmiH1LIcoEZ7QFzJ`k2
 R3
 r1
 !s85 0
@@ -207,13 +207,13 @@ n@immediate@sign@extend
 XImmediateSignExtend_sv_unit
 R1
 R2
-VV[f1jW7VJF>8Y0XHAHCV20
+Vn@]fmiH1LIcoEZ7QFzJ`k2
 r1
 !s85 0
 31
 !i10b 1
-!s100 EBjX<<X];E>ARN_fLPC0b1
-IV[f1jW7VJF>8Y0XHAHCV20
+!s100 <ok>1zc][kLiSTVH0b2G]1
+In@]fmiH1LIcoEZ7QFzJ`k2
 !i103 1
 S1
 R0
@@ -232,13 +232,13 @@ vInstructionMemory
 R1
 R22
 !i10b 1
-!s100 e8k:?Cj[n=1PD7oT8o2l?1
-ITfeL[6VL@RRz[Q7S<PDn50
+!s100 d:2N1M0CCUiljfW><PzF23
+IY<^VcmZJ^3Bi`AF[AibU03
 R3
 !s105 InstructionMemory_sv_unit
 S1
 R0
-w1789326651
+w1795735684
 8InstructionMemory.sv
 FInstructionMemory.sv
 R23
@@ -255,7 +255,7 @@ n@instruction@memory
 vLoadAndStoreUnit
 R1
 R2
-DXx4 work 21 LoadStoreUnit_sv_unit 0 22 F@Hk[_f67eVcof_W^f^9P2
+DXx4 work 21 LoadStoreUnit_sv_unit 0 22 CJD=TlRnOEh49@FdhQCPd0
 R3
 r1
 !s85 0
@@ -280,13 +280,13 @@ n@load@and@store@unit
 XLoadStoreUnit_sv_unit
 R1
 R2
-VF@Hk[_f67eVcof_W^f^9P2
+VCJD=TlRnOEh49@FdhQCPd0
 r1
 !s85 0
 31
 !i10b 1
-!s100 k;zC3@37zcWaGo54fiOT10
-IF@Hk[_f67eVcof_W^f^9P2
+!s100 hSB0i^zC7g?h0lH`L4aS<2
+ICJD=TlRnOEh49@FdhQCPd0
 !i103 1
 S1
 R0
@@ -301,21 +301,67 @@ R11
 !i113 1
 R12
 n@load@store@unit_sv_unit
+vneural_accelerator
+R1
+R22
+!i10b 1
+!s100 zgJM]`Z:cUO_XgPY:k_R60
+Ij^PcknzHaAVeYd?6BgY>]2
+R3
+!s105 neural_accelerator_sv_unit
+S1
+R0
+w1795633446
+8../etapa1_3a_unid/neural_accelerator.sv
+F../etapa1_3a_unid/neural_accelerator.sv
+L0 7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+vneural_accelerator_unit
+R1
+R22
+!i10b 1
+!s100 EnNIDj5EMCD6j;DL50Pl71
+I_h5SNQT`O1E`3=P9Ikhz[0
+R3
+!s105 neural_accelerator_unit_sv_unit
+S1
+R0
+w1795733006
+8neural_accelerator_unit.sv
+Fneural_accelerator_unit.sv
+R21
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
 vProcessorCore
 R1
 R2
-DXx4 work 21 ProcessorCore_sv_unit 0 22 fgMTWB54bLY8l@I5VcDjU2
+DXx4 work 21 ProcessorCore_sv_unit 0 22 K?BSOW1cKWE6SUfZ`NiXN3
 R3
 r1
 !s85 0
 31
 !i10b 1
-!s100 <o]9nRIijWMc5_FZGmA@j1
-IbK9468`Yln2YgHMU^mjz61
+!s100 B^23_bIC8k>bk>O`0C=Wz3
+I258AG_lBVRU2hY32[7]Ig2
 !s105 ProcessorCore_sv_unit
 S1
 R0
-Z28 w1790077527
+Z28 w1795733463
 Z29 8ProcessorCore.sv
 Z30 FProcessorCore.sv
 R17
@@ -329,13 +375,13 @@ n@processor@core
 XProcessorCore_sv_unit
 R1
 R2
-VfgMTWB54bLY8l@I5VcDjU2
+VK?BSOW1cKWE6SUfZ`NiXN3
 r1
 !s85 0
 31
 !i10b 1
-!s100 5_AI3[G2hZo76X66LMR910
-IfgMTWB54bLY8l@I5VcDjU2
+!s100 ^aN_T`TG<DRRUkimb4mWN0
+IK?BSOW1cKWE6SUfZ`NiXN3
 !i103 1
 S1
 R0
@@ -378,12 +424,12 @@ Xrisc_v_32_i_pkg
 R1
 R22
 !i10b 1
-!s100 aS?afF<R?_3X3ERCU:jUI3
-IVacEA2H?Ai8Xg4Ro64=EP0
-VVacEA2H?Ai8Xg4Ro64=EP0
+!s100 IE4=hSoYREgkZ2F4ED^V_1
+I7AOUVe?0HEAPeAm4R>;i=3
+V7AOUVe?0HEAPeAm4R>;i=3
 S1
 R0
-w1790019995
+w1795733408
 8risc_v_32_i_pkg.sv
 Frisc_v_32_i_pkg.sv
 R21
@@ -399,20 +445,20 @@ R12
 vtop
 R1
 R2
-DXx4 work 11 top_sv_unit 0 22 H`EAg[4lbm]_A4YIKI9b23
+DXx4 work 11 top_sv_unit 0 22 hQg:l17]W<oAFE:A_Jjh=1
 R3
 r1
 !s85 0
 31
 !i10b 1
 !s100 bK_QH=OeGhi1lfZhD[<Wk3
-Izi<@]bI5aFjIK4?ja24Cl3
+IJ?E>XX1of]nV;8OQ6zB@Z2
 !s105 top_sv_unit
 S1
 R0
 Z31 w1789225733
-Z32 8../tb/top.sv
-Z33 F../tb/top.sv
+Z32 8top.sv
+Z33 Ftop.sv
 R7
 R8
 R9
@@ -423,13 +469,13 @@ R12
 Xtop_sv_unit
 R1
 R2
-VH`EAg[4lbm]_A4YIKI9b23
+VhQg:l17]W<oAFE:A_Jjh=1
 r1
 !s85 0
 31
 !i10b 1
 !s100 FKalfC0KhQIUn=I:5hCAe0
-IH`EAg[4lbm]_A4YIKI9b23
+IhQg:l17]W<oAFE:A_Jjh=1
 !i103 1
 S1
 R0

@@ -1,13 +1,13 @@
 /***************************************************************
-* Copyright (c) 2022 Hariesh Anbalagan
-* SPDX-License-Identifier: GPL-3.0-only
-* 
-* Module: ProcessorCore.sv
+- Copyright (c) 2022 Hariesh Anbalagan
+- SPDX-License-Identifier: GPL-3.0-only
+- 
+- Module: ProcessorCore.sv
 *
-* Description:
+- Description:
 *
-* This does contains to processor core datapath.
-* (Load and store are yet to developed fully)
+- This does contains to processor core datapath.
+- (Load and store are yet to developed fully)
 ***************************************************************/
 import risc_v_32_i_pkg::*;
 
@@ -69,6 +69,8 @@ module ProcessorCore
     comp_select_e comp_op_sel;
     logic data_memory_write_enable;
     write_data_select_e reg_write_data_sel;
+    logic acc_load;
+    logic signed [31:0] acc_result;
 
     logic [31:0]reg_data;
 
@@ -123,10 +125,21 @@ module ProcessorCore
         .load_store_type_o                (load_store_type),
         .data_memory_write_enable_o       (data_memory_write_enable),
         .reg_write_data_sel_o             (reg_write_data_sel),
+        .acc_load_o                       (acc_load),
         .op_code_i                        (instruction[6:0]),
         .funct3_i                         (instruction[14:12]),
         .funct7_bit5_i                    (instruction[30]),
         .branch_enable_i                  (branch_enable)
+    );
+
+    neural_accelerator_unit u_neural_acc
+    (
+        .clk_i      (clk_i),
+        .reset_i    (reset_i),
+        .acc_load_i (acc_load),
+        .op_a_i     (reg_source_1),
+        .op_b_i     (reg_source_2),
+        .result_o   (acc_result)
     );
 
     assign alu_port_a = execute_port_a_sel ? reg_source_1 : PC;
@@ -174,6 +187,7 @@ module ProcessorCore
              RD_MUX_BCU:    reg_data = {31'b0, branch_enable};
              RD_MUX_IMM:    reg_data = immediate;
             RD_MUX_PC_N:    reg_data = pc_next;
+            RD_MUX_ACC:     reg_data = acc_result;
                 default:    reg_data = {XLEN{1'bz}};
         endcase
     end
